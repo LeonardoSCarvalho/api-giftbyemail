@@ -37,4 +37,8 @@ describe('Email validator', () => {
     const email = 'any@' + 'd'.repeat(64) + '.com'
     expect(Email.validade(email)).toBeFalsy()
   })
+  it('should not accept empty domain', () => {
+    const email = 'any email@email.com'
+    expect(Email.validade(email)).toBeFalsy()
+  })
 })
