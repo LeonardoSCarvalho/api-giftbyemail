@@ -17,4 +17,8 @@ describe('Email validator', () => {
     const email = 'l'.repeat(65) + '@mail.com'
     expect(Email.validade(email)).toBeFalsy()
   })
+  it('should not accept strings than 320 chars', () => {
+    const email = 'l'.repeat(64) + '@' + 'l'.repeat(256) + '.com'
+    expect(Email.validade(email)).toBeFalsy()
+  })
 })
