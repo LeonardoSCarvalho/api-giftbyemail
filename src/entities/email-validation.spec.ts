@@ -21,4 +21,8 @@ describe('Email validator', () => {
     const email = 'l'.repeat(64) + '@' + 'l'.repeat(256) + '.com'
     expect(Email.validade(email)).toBeFalsy()
   })
+  it('should not accept domail part larger than 255 chars', () => {
+    const email = 'local' + '@' + 'd'.repeat(256) + '.com'
+    expect(Email.validade(email)).toBeFalsy()
+  })
 })
