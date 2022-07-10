@@ -26,6 +26,6 @@ export class Email {
 
   static create (email:string): Either<InvalidEmailError, Email> {
     if (Email.validade(email)) return right(new Email(email))
-    throw left(new InvalidEmailError())
+    return left(new InvalidEmailError(email))
   }
 }

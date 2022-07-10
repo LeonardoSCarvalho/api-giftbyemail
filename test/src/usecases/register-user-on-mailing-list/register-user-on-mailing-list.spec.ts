@@ -1,6 +1,7 @@
-import { UserData } from '../../entities/user-data'
-import { UserRepository } from './ports/user-repository'
-import { RegisterUserOnMailingList } from './register-user-on-mailing-list'
+
+import { UserData } from '../../../../src/entities/user-data'
+import { UserRepository } from '../../../../src/usecases/register-user-on-mailing-list/ports/user-repository'
+import { RegisterUserOnMailingList } from '../../../../src/usecases/register-user-on-mailing-list/register-user-on-mailing-list'
 import { InMemoryUserRepository } from './repository/in-memory-user-repository'
 
 describe('Register user on mailing list use case', () => {
@@ -34,7 +35,7 @@ describe('Register user on mailing list use case', () => {
     const email = 'any@email.com'
     const response = (await usecase.registerUserOnMailingList({ name, email })).value as Error
     const user = await repo.findUserByEmail(email)
-    expect(response).toEqual('InvalidNameError')
+    expect(response.name).toEqual('InvalidNameError')
     expect(user).toBeNull()
   })
 })
