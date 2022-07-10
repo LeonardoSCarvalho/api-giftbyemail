@@ -1,1 +1,1 @@
-export * from './register-user-on-mailing-list'
+export * from '@/usecases/register-user-on-mailing-list/register-user-on-mailing-list'

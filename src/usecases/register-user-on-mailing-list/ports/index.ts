@@ -1,1 +1,1 @@
-export * from './user-repository'
+export * from '@/usecases/register-user-on-mailing-list/ports/user-repository'
