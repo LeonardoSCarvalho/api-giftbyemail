@@ -9,3 +9,8 @@ export const badRequest = (error: any): HttpResponse => ({
   statusCode: 400,
   body: error
 })
+
+export const serverError = (error: any): HttpResponse => ({
+  statusCode: 500,
+  body: error
+})
