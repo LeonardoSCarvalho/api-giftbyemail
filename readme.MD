@@ -1,6 +1,6 @@
 Api requirements
 
-1. Register user on mailing list
+1. Register user in the sent bonus list
   - email has to be valid
   - name has to be valid 
-2. e-mail user with bonus
+2. send bonus to email
