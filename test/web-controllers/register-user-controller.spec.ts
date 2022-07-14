@@ -5,7 +5,7 @@ import { RegisterUserOnMailingList } from '@/usecases/register-user-on-mailing-l
 import { UserRepository } from '@/usecases/register-user-on-mailing-list/ports'
 import { HttpRequest, HttpResponse } from '@/web-controllers/ports'
 import { RegisterUserController } from '@/web-controllers/register-user-controller'
-import { InMemoryUserRepository } from '@test/src/usecases/register-user-on-mailing-list/repository'
+import { InMemoryUserRepository } from '@test/usecases/register-user-on-mailing-list/repository'
 
 describe('Register web controller', () => {
   const users: UserData[] = []
