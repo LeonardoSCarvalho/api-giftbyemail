@@ -12,7 +12,7 @@ module.exports = {
     '!**/config/**'
   ],
   coverageProvider: 'v8',
-  testEnvironment: 'node',
+  preset: '@shelf/jest-mongodb',
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
