@@ -19,4 +19,12 @@ describe('Mongodb User repository', () => {
     })
     expect(await userRepository.exists('any@mail.com')).toBeTruthy()
   })
+  it('find all users should return all added users', async () => {
+    const userRepository = new MongodbUserRepository()
+    await userRepository.add({
+      name: 'anyname',
+      email: 'any@mail.com'
+    })
+    expect(await userRepository.findAllUsers()).toHaveLength(1)
+  })
 })
