@@ -1,6 +1,11 @@
 import 'module-alias/register'
-import app from '@/main/config/app'
+import { MongoHelper } from '@/infra/repositories/mongodb/helper/mongo-helper'
 
-app.listen(5000, () => {
-  console.log('Server is running')
-})
+MongoHelper.connect(process.env.MONGO_URL)
+  .then(async () => {
+    const app = (await import('@/main/config/app')).default
+    app.listen(5000, () => {
+      console.log('Server is running')
+    })
+  })
+  .catch(console.error)
